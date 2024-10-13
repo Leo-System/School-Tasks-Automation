@@ -1,10 +1,10 @@
 # __School-Tasks-Automation__
 
-This is a code that automate school homework. It is made using python and PyAutoGui and pyperclip. Note that it uses the setup of my computer to work (that is a Arch Linux with i3wm with no customization in the window layout), so have in mind that it is made to work in my computer.
+This is a code that automate school homework. It is made using python, PyAutoGui and pyperclip. Note that it uses the setup of my computer to work (that is a Arch Linux with i3wm with no customization in the window layout), so have in mind that it is made to work in my computer.
 
 ## __About the code__
 
-This is a RPA project about automating school homework, it asks the user about how many themes he needs to search and it automate the process of going to a ia, making a initial prompt to direct the behavior of the ai and asking it to write a text about the themes.
+This is a RPA project about automating school homework, it asks the user about how many themes he needs to search and it automate the process of going to a ia, making a initial prompt to direct the behavior of it and asking it to write a text about the themes.
 
 > [!NOTE]
 > This code will make the ai write paragraphs and only paragraphs, so have this in mind when running the code.
@@ -29,7 +29,7 @@ The function of the code is based on my setup, if you want to run the code you w
 1. Download the dependencies of the libraries needed with the comand `sudo pacman -S xclip python-xlib scrot` so the libraries can execute their comands (This comand is used if you will run the code on a arch based Linux distro, if you will run it on other distro you will need to search how to install them in your distro);
 
 2. Create a virtual enviroment for python if you don't have one so you can download the Libraries needed and run the code;
-    - To create the virtual enviroment first run `python3 -m venv ~/<your ambient name>`, change <your ambient name> to the name that you want it to have (if you want you can put a dot in the front of the name so the directory of it became a hiden directory).
+    - To create the virtual enviroment, first run `python3 -m venv ~/<your ambient name>`, change `<your ambient name>` to the name that you want it to have (if you want you can put a dot in the front of the name so the directory of it became a hiden directory).
     - After creating it run the comand `source ~/<your ambient name>/bin/activate` to run the virtual enviroment. When it is activated you can download the libraries needed and run the code (__NOTE:__ the libraries will be downloaded in the venv, so if you make another one they will note be there);
     - When you finished downloading the libraries and running the program run the comand `deactivate` to exit the virtual enviroment.
 
@@ -48,7 +48,7 @@ The Libraries used in this project and their function are:
     - This Librarie is used to automate the actions on the computer, so the code do the asking part for the user;
 
 2. __Pyperclip__:
-    - This library is used in the cases that the code will write down some text that contains somethings that the user has writed, this is done so pyperclip copy the text containing the users entries and PyAutoGui do a "ctrl + v" comand. This is done because, if the user insert something with special carachter when the code will write it down it will write the special carchters, unlike "pyautogui.write()" that cannot write special carachters.
+    - This library is used in the cases that the code will write down some text that contains somethings that the user has writed, this is done so pyperclip copy the text containing the users entries and PyAutoGui do a "ctrl + v" comand. This is done because, if the user insert something with special carachter when the code will write it down it will write the special carchters, unlike `pyautogui.write()` that cannot write special carachters.
 
 3. __time__:
     - This library is used in some cases to make the code stop, so it can wait something, like the browser open or the ai say something.
