@@ -1,57 +1,58 @@
 # __School-Tasks-Automation__
 
-This is a code that automate school homework. It is made using python, PyAutoGui and pyperclip. Note that it uses the setup of my computer to work (that is a Arch Linux with i3wm with no customization in the window layout), so have in mind that it is made to work in my computer.
+This is a code that automates school homework. It is made using Python, PyAutoGui, and pyperclip. Note that it uses the setup of my computer to work (which is Arch Linux with i3wm and no customization in the window layout), so keep in mind that it is designed to work on my machine.
 
-## __About the code__
+## __About the Code__
 
-This is a RPA project about automating school homework, it asks the user about how many themes he needs to search and it automate the process of going to a ia, making a initial prompt to direct the behavior of it and asking it to write a text about the themes.
+This is an RPA project focused on automating school homework. It asks the user how many topics they need to search for and automates the process of accessing an AI, making an initial prompt to direct its behavior, and asking it to write a text about the topics.
 
 > [!NOTE]
-> This code will make the ai write paragraphs and only paragraphs, so have this in mind when running the code.
+> This code will make the AI write paragraphs and only paragraphs, so keep this in mind when running the code.
 
-## __What you need to to run the code__
+## __What You Need to Run the Code__
 
-The function of the code is based on my setup, if you want to run the code you will need to have the following:
+The functionality of the code is based on my setup. If you want to run the code, you will need the following:
 
 1. A 1366x768 screen size monitor;
-2. i3wm as your desktop enviroment without heavy customization (mine have praticaly none, i only changed the fonts of the system);
-3. The windows key as your mod key (this is the key that will do the i3 comands, you can alter the code in the line 15 if you want to run on your setup);
+2. i3wm as your desktop environment without heavy customization (mine has practically none; I only changed the system fonts);
+3. The Windows key as your mod key (this is the key that will execute the i3 commands; you can alter the code on line 15 if you want to run it on your setup);
 4. Arch Linux as your OS.
 
 > [!NOTE]
-> This code has been only been tested on a computer with Arch Linux and i3wm, it is possible that it can run on other Linux Os that have i3wm as it desktop enviroment.
+> This code has only been tested on a computer with Arch Linux and i3wm. It is possible that it can run on other Linux OS versions that have i3wm as their desktop environment.
 
-## __How to run the code__
+## __How to Run the Code__
 
 > [!WARNING]
-> The first 3 steps are about preparing to run the code in your machine, like downloading the libraries, their dependencies and making a python virtual enviroment. If you already done them before you can skip them.
+> The first three steps involve preparing to run the code on your machine, such as downloading the libraries, their dependencies, and setting up a Python virtual environment. If you have already completed these steps, you can skip them.
 
-1. Download the dependencies of the libraries needed with the comand `sudo pacman -S xclip python-xlib scrot` so the libraries can execute their comands (This comand is used if you will run the code on a arch based Linux distro, if you will run it on other distro you will need to search how to install them in your distro);
+1. Download the dependencies of the libraries needed with the command `sudo pacman -S xclip python-xlib scrot` so that the libraries can execute their commands. (This command is used if you are running the code on an Arch-based Linux distro; if you are running it on another distro, you will need to search for how to install them for your system.)
 
-2. Create a virtual enviroment for python if you don't have one so you can download the Libraries needed and run the code;
-    - To create the virtual enviroment, first run `python3 -m venv ~/<your ambient name>`, change `<your ambient name>` to the name that you want it to have (if you want you can put a dot in the front of the name so the directory of it became a hiden directory).
-    - After creating it run the comand `source ~/<your ambient name>/bin/activate` to run the virtual enviroment. When it is activated you can download the libraries needed and run the code (__NOTE:__ the libraries will be downloaded in the venv, so if you make another one they will note be there);
-    - When you finished downloading the libraries and running the program run the comand `deactivate` to exit the virtual enviroment.
+2. Create a virtual environment for Python if you don't have one, so you can download the necessary libraries and run the code:
+    - To create the virtual environment, first run `python3 -m venv ~/<your environment name>`, changing `<your environment name>` to the name you want it to have (if you prefer, you can add a dot in front of the name so the directory becomes a hidden directory).
+    - After creating it, run the command `source ~/<your environment name>/bin/activate` to activate the virtual environment. When it is activated, you can download the necessary libraries and run the code. (__NOTE:__ The libraries will be downloaded in the venv, so if you create another one, they will not be there.)
+    - When you finish downloading the libraries and running the program, run the command `deactivate` to exit the virtual environment.
 
 > [!TIP]
-> Because these comands for the virtual enviroment are big, you can create a alias to call them when you need.
+> Because these commands for the virtual environment are lengthy, you can create an alias to call them when needed.
 
-3. In the virtual enviroment, download the libraries PyAutoGui and pyperclip with the comand `pip install pyautogui pyperclip`;
+3. In the virtual environment, download the libraries PyAutoGui and pyperclip with the command `pip install pyautogui pyperclip`;
 
-4. Still in the virtual enviroment, go to the code directory and run it with `python3 automatization.py`.
+4. Still in the virtual environment, navigate to the code directory and run it with `python3 automatization.py`.
 
-## __Libraries used__
+## __Libraries Used__
 
-The Libraries used in this project and their function are:
+The libraries used in this project and their functions are:
 
 1. __PyAutoGui__:
-    - This Librarie is used to automate the actions on the computer, so the code do the asking part for the user;
+    - This library is used to automate actions on the computer, allowing the code to handle user input.
 
 2. __Pyperclip__:
-    - This library is used in the cases that the code will write down some text that contains somethings that the user has writed, this is done so pyperclip copy the text containing the users entries and PyAutoGui do a "ctrl + v" comand. This is done because, if the user insert something with special carachter when the code will write it down it will write the special carchters, unlike `pyautogui.write()` that cannot write special carachters.
+    - This library is used in cases where the code will write text that contains information entered by the user. Pyperclip copies the text containing the user's entries, and PyAutoGui executes a "ctrl + v" command. This approach is used because if the user inputs something with special characters, the code will write them correctly; unlike `pyautogui.write()`, which cannot handle special characters.
 
 3. __time__:
-    - This library is used in some cases to make the code stop, so it can wait something, like the browser open or the ai say something.
+    - This library is used in some cases to pause the code, allowing it to wait for events such as the browser opening or the AI responding.
 
 4. __os__:
-   - This library is only used in the stating of the program to clear the terminal.
+   - This library is only used at the start of the program to clear the terminal.
+
