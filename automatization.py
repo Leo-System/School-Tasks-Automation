@@ -77,15 +77,11 @@ time.sleep(20)
 3 - Writing the inicial prompt to say to the ai what it needs to do.
 '''
 
-#Now the code will click in the write bar of the ai to write the prompt:
-#pa.click(x = 446, y = 687)
-
 #Writing the initial prompt that will instruct how the ai should act:
 pyperclip.copy(f"You will make texts only composed by paragraphs about some things of {field} and you will make these texts in {language}. You can only make texts composed by paragraphs and they need to be in {language}. If you understand, say 'I will help you with {field}' in {language}.")
 pa.hotkey('ctrl', 'v')
 
 #Sending this initial prompt to the ai:
-#pa.click(x = 1040, y = 680)
 pa.press("enter")
 
 #Pausing the code a little bit more
@@ -98,7 +94,7 @@ time.sleep(7)
 #Now it will send the themes so the ai make the text about them:
 for i in themes:
     pa.click(x = 446, y = 687)
-    pyperclip.copy(f"Make a text about {i} in {language} that is composed only by paragraphs. This text needs to be complete and not too big, try to make him with 1 to 3 paragraphs. Focus on make the text about {i} complet, saying everything that is needed to to know about him but not being too long as a said. Remember that it needs to be in {language}.")
+    pyperclip.copy(f"Make a text about {i} in {language} that is composed only by paragraphs. This text needs to be complete and not too big, try to make him with 1 to 3 paragraphs. Focus on make the text about {i} complete, saying everything that is needed to to know about him but not being too long as a said. Remember that it needs to be in {language}.")
     pa.hotkey('ctrl', 'v')
     pa.click(x = 1040, y = 680)
     time.sleep(20)
